@@ -28,7 +28,19 @@
                                 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#education" role="tab"> Projects files</a> </li>
                                 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#experience" role="tab"> Manager Comments </a> </li>
                                 <!-- Notes -->
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#expenses" role="tab"> Complete Task </a> </li>
+                                <?php if($this->session->userdata('user_type')=='EMPLOYEE'){ ?>
+                                <li class="nav-item"> 
+                                    <a class="nav-link" data-toggle="tab" href="#expenses" role="tab">
+                                    Complete Task
+                                    </a> 
+                                </li>
+                                <?php } else { ?>
+                                <li class="nav-item"> 
+                                    <a class="nav-link" data-toggle="tab" href="#expenses" role="tab">
+                                    Completed Task
+                                    </a> 
+                                </li>
+                                <?php } ?>    
                                 <!-- Expenses -->
                                 <!-- <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#logid" role="tab"> Logistic</a> </li> -->
                             </ul>
