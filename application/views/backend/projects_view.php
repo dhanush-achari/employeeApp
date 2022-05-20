@@ -481,15 +481,15 @@
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
-                        </table>
-                    </div>	                                    
+                        </table>           
+                         <?php if($this->session->userdata('user_type')=='EMPLOYEE'){ ?>
 			                                <form class="row" action="Add_Expenses" method="post" enctype="multipart/form-data" id="expenseform">
 			                                    <div class="form-group col-md-6 m-t-5">
 			                                        <label>Details</label>
 			                                        <input type="text" class="form-control form-control-line" placeholder="details..." name="details"> 
 			                                    </div>
 			                                    <div class="form-group col-md-6 m-t-5">
-			                                        <label>Assign To</label>
+			                                        <label>Completed By</label>
                                                 <select class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1" name="assignto">
                                                 
                                                 <?php
@@ -503,8 +503,8 @@
                                                 </select>
 			                                    </div>
 			                                    <div class="form-group col-md-6 m-t-5">
-			                                        <label>Amount</label>
-			                                        <input type="text" class="form-control form-control-line" placeholder=" amount.." name="amount"> 
+			                                        <label>Wallet Address</label>
+			                                        <input type="text" class="form-control form-control-line" placeholder="Wallet Address" name="amount"> 
 			                                    </div>
 			                                    <div class="form-group col-md-6 m-t-5">
 			                                        <label>Date</label>
@@ -517,10 +517,15 @@
 			                                        <button type="button" class="btn btn-info">Cancel</button>
 			                                    </div>
 			                                </form>
+                                        
+                                            <?php } else { ?>  
+                                            <button type="submit" class="btn btn-success" id="walletLogin"  >Wallet Login</button>
+                                        <?php } ?>
+
 					                    </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="assets" role="tabpanel">
+                <!-- <div class="tab-pane" id="assets" role="tabpanel">
                                     <div class="card-body">
                     <div class="table-responsive ">
                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -533,7 +538,7 @@
                                     <th>Amount </th>
                                     <th>Status </th>
                                 </tr>
-                            </thead>
+                            </thead> -->
                             <!-- <tfoot>
                                 <tr>
                                     <th>ID</th>
@@ -544,8 +549,8 @@
                                     <th>Status </th>
                                 </tr>
                             </tfoot> -->
-                            <tbody>
-                               <?php foreach($expenses as $value): ?>
+                            <!-- <tbody> -->
+                               <!-- <?php foreach($expenses as $value): ?>
                                 <tr>
                                     <td><?php echo $value->id ?></td>
                                     <td><?php echo $value->details ?></td>
@@ -578,8 +583,8 @@
                                             </div>
                                         </form>
                                     </div>
-                                </div>
-                                <div class="tab-pane" id="logid" role="tabpanel">
+                                </div> -->
+                                <!-- <div class="tab-pane" id="logid" role="tabpanel">
                                     <div class="card">
 	                                    <div class="card-body">
 	                                    <a data-toggle="modal" data-target="#logisticmodel" data-whatever="@getbootstrap" class="text-white btn btn-info">Logistic Support</a>
@@ -594,7 +599,7 @@
                                     <th>End Date </th>
                                     <th>Action </th>
                                 </tr>
-                            </thead>
+                            </thead> -->
                             <!-- <tfoot>
                                 <tr>
                                     <th>Logistic Name</th>
@@ -605,7 +610,7 @@
                                     <th>Action </th>
                                 </tr>
                             </tfoot> -->
-                            <tbody>
+                            <!-- <tbody>
                                <?php foreach($logisticlist as $value): ?>
                                 <tr>
                                     <td><?php echo $value->ass_name ?></td> 
@@ -624,7 +629,7 @@
                     </div>	                                   
 					                    </div>
                                     </div>
-                                </div>                                
+                                </div>                                 -->
                             </div>
                         </div>
                     </div>
@@ -634,6 +639,9 @@
             </div>
               
 <?php $this->load->view('backend/pro_modal'); ?>
+
+
+
 <script type="text/javascript">
                                         $(document).ready(function () {
                                             $(".notes").click(function (e) {
