@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <!-- Column -->
-                    <div class="col-md-6 col-lg-3 col-xlg-3">
+                    <!-- <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-info card-inverse">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">
@@ -135,7 +135,7 @@
                                 <h6 class="text-white">Pending Leave Application</h6>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Column -->
                     <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-danger">
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <!-- Column -->
-                    <div class="col-md-6 col-lg-3 col-xlg-3">
+                    <!-- <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-success">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">
@@ -165,7 +165,7 @@
                                 <h6 class="text-white">Loan Application</h6>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Column -->
                 </div>
                 <!-- ============================================================== -->
