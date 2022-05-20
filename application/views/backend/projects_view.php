@@ -519,7 +519,7 @@
 			                                </form>
                                         
                                             <?php } else { ?>  
-                                            <button type="submit" class="btn btn-success" id="walletLogin"  >Wallet Login</button>
+                                            <button type="submit" class="btn btn-success" id="walletLogin" onclick="walletLogin()"  >Wallet Login</button>
                                         <?php } ?>
 
 					                    </div>
@@ -640,7 +640,17 @@
               
 <?php $this->load->view('backend/pro_modal'); ?>
 
-
+<script type="text/javascript">
+    function walletLogin()
+    {
+        try {
+        web3.currentProvider.enable()
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+</script>
 
 <script type="text/javascript">
                                         $(document).ready(function () {
