@@ -652,14 +652,160 @@
               
 <?php $this->load->view('backend/pro_modal'); ?>
 
+<!-- Veryyy Important WEB3 CDN -->
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"
+    integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
 <script type="text/javascript">
-    function walletLogin()
+    var contractAddress = "0x1D6bc7697B9fe6861A3698971B37d6a0E2643570";
+        var contractABI = [
+        {
+            constant: false,
+            inputs: [
+                {
+                    name: "_employeeAddress",
+                    type: "address",
+                },
+            ],
+            name: "addEmployee",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+        },
+        {
+            constant: false,
+            inputs: [
+                {
+                    name: "_managerAddress",
+                    type: "address",
+                },
+            ],
+            name: "addManager",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+        },
+        {
+            constant: false,
+            inputs: [
+                {
+                    name: "_employeeAddress",
+                    type: "address",
+                },
+                {
+                    name: "numberOfVotes",
+                    type: "uint256",
+                },
+            ],
+            name: "vote",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+        },
+        {
+            constant: true,
+            inputs: [
+                {
+                    name: "",
+                    type: "address",
+                },
+            ],
+            name: "employees_",
+            outputs: [
+                {
+                    name: "",
+                    type: "uint256",
+                },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+        },
+        {
+            constant: true,
+            inputs: [
+                {
+                    name: "",
+                    type: "address",
+                },
+            ],
+            name: "managers_",
+            outputs: [
+                {
+                    name: "",
+                    type: "uint256",
+                },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+        },
+        {
+            constant: true,
+            inputs: [
+                {
+                    name: "",
+                    type: "address",
+                },
+            ],
+            name: "votes",
+            outputs: [
+                {
+                    name: "",
+                    type: "uint256",
+                },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+        },
+        ];
+        function contractConnect() {
+            window.contract = new web3.eth.Contract(contractABI, contractAddress);
+        }
+
+        connect()
+        // console.log(contract);
+</script>
+
+  <!-- Web3 setUp with ethereum --> 
+<script type="text/javascript">
+  window.onload = async () => {
+      if (window.ethereum) {
+        window.web3 = new Web3(ethereum);
+        console.log("hey");
+      } else {
+        alert("Please connect to your Metamask wallet");
+      }
+    };
+    window.userAddress = null;
+
+// LOGGIN to metamask or Wallet
+  async function walletLogin()
     {
-        try {
-        web3.currentProvider.enable()
-            
-        } catch (error) {
+        if (web3) {
+            try {
+                console.log("Web3 Available");
+                await web3.currentProvider.enable()
+                const accounts = await web3.eth.getAccounts();
+                window.localStorage.setItem("userAddress", accounts[0]);
+                window.userAddress = window.localStorage.getItem("userAddress");
+                console.log(accounts);
+                contractConnect();
+                } 
+            catch (error) {
             console.log(error);
+            }
+        }
+        else{
+            alert("Please connect to your Metamask wallet")
         }
     }
 </script>
