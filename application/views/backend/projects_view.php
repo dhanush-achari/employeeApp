@@ -461,9 +461,9 @@
                             <thead>
                                 <tr>
                                     <th>Details</th>
-                                    <th>Assigned users </th>
+                                    <th>Completed By </th>
                                     <th>Date </th>
-                                    <th>Amount </th>
+                                    <th>Wallet Address </th>
                                     <th>Status </th>
                                 </tr>
                             </thead>
@@ -533,7 +533,17 @@
                                             <?php } else { ?>  
                                             <h3>Login to Distribute Credits Points</h3>    
                                             <button type="submit" class="btn btn-success" id="walletLogin" onclick="walletLogin()"  >Wallet Login</button>
+                                            
                                             <p id="userWalletAddress"></p>
+                                            
+                                            <label for="exampleInputEmail1">Employee Wallet Address</label>
+                                            <input type="email" class="form-control" id="employeeWalletAddress" aria-describedby="emailHelp" placeholder="Enter Employee Wallet Address">
+                                            <small id="emailHelp" class="form-text text-muted">We'll never share your wallet address with anyone else.</small>
+                                            <label for="exampleInputEmail1">Credit points</label>
+                                            <input type="number" class="form-control" id="creditPoints" aria-describedby="emailHelp" placeholder="Enter Credit points">
+                                            <small id="emailHelp" class="form-text text-muted">How many credits would you like to award?</small>
+                                            <button type="button" class="btn btn-warning" onclick="sendCreditPoints()">Award</button>
+
                                         <?php } ?>
 
 					                    </div>
@@ -663,7 +673,7 @@
   ></script>
 
   <!-- CONTRACT ABI AND ADDRESS FOR CONTRACT INTAIALIZATION => contractConnect  -->
-  <script src="<?php echo base_url(); ?>assets/js/smartContract/constants.js">
+  <script src="<?php echo base_url(); ?>assets/js/smartContract/contractCon.js">
   </script>    
 
 
@@ -672,7 +682,7 @@
   window.onload = async () => {
       if (window.ethereum) {
         window.web3 = new Web3(ethereum);
-        console.log("hey");
+        console.log("hey web3 ethereum setup successfully");
       } else {
         alert("Please connect to your Metamask wallet");
       }
@@ -690,7 +700,14 @@
                 window.localStorage.setItem("userAddress", accounts[0]);
                 window.userAddress = window.localStorage.getItem("userAddress");
                 console.log(accounts);
-
+                console.log();
+                
+                try {
+                    contractConnect();
+                    console.log("connected to contract successfully");
+                } catch (error) {
+                    console.log(error,"erroe while connecting to contract");
+                }
                 contractConnect();
                 showAddress()
                 } 
@@ -706,8 +723,22 @@
  function showAddress() {
     console.log("showAddress funtion");
      if(window.userAddress!=null)
-     document.getElementById("userWalletAddress").innerText = `You're Logged into:${window.userAddress}`
+     document.getElementById("userWalletAddress").innerText = `You're Logged into: ${window.userAddress}`
  } 
+
+ // Sending or Trasaction of credit points
+
+ function sendCreditPoints() {
+     console.log("Sending credit points");
+     var employeeWalletAddress = document.getElementById("employeeWalletAddress").value
+     var creditPoints = parseInt(document.getElementById("creditPoints").value)
+    //  console.log(creditPoints);
+
+    contract.methods.distributePoints(employeeWalletAddress,creditPoints).send({from:userAddress}).then(function(response) {
+        console.log(response);
+        console.log("Trasaction of credit points successful");
+    })
+ }
 </script>
 
 <script type="text/javascript">
