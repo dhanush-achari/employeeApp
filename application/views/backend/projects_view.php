@@ -531,7 +531,9 @@
 			                                </form>
                                         
                                             <?php } else { ?>  
+                                            <h3>Login to Distribute Credits Points</h3>    
                                             <button type="submit" class="btn btn-success" id="walletLogin" onclick="walletLogin()"  >Wallet Login</button>
+                                            <p id="userWalletAddress"></p>
                                         <?php } ?>
 
 					                    </div>
@@ -660,120 +662,10 @@
     referrerpolicy="no-referrer"
   ></script>
 
-<script type="text/javascript">
-    var contractAddress = "0x1D6bc7697B9fe6861A3698971B37d6a0E2643570";
-        var contractABI = [
-        {
-            constant: false,
-            inputs: [
-                {
-                    name: "_employeeAddress",
-                    type: "address",
-                },
-            ],
-            name: "addEmployee",
-            outputs: [],
-            payable: false,
-            stateMutability: "nonpayable",
-            type: "function",
-        },
-        {
-            constant: false,
-            inputs: [
-                {
-                    name: "_managerAddress",
-                    type: "address",
-                },
-            ],
-            name: "addManager",
-            outputs: [],
-            payable: false,
-            stateMutability: "nonpayable",
-            type: "function",
-        },
-        {
-            constant: false,
-            inputs: [
-                {
-                    name: "_employeeAddress",
-                    type: "address",
-                },
-                {
-                    name: "numberOfVotes",
-                    type: "uint256",
-                },
-            ],
-            name: "vote",
-            outputs: [],
-            payable: false,
-            stateMutability: "nonpayable",
-            type: "function",
-        },
-        {
-            constant: true,
-            inputs: [
-                {
-                    name: "",
-                    type: "address",
-                },
-            ],
-            name: "employees_",
-            outputs: [
-                {
-                    name: "",
-                    type: "uint256",
-                },
-            ],
-            payable: false,
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            constant: true,
-            inputs: [
-                {
-                    name: "",
-                    type: "address",
-                },
-            ],
-            name: "managers_",
-            outputs: [
-                {
-                    name: "",
-                    type: "uint256",
-                },
-            ],
-            payable: false,
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            constant: true,
-            inputs: [
-                {
-                    name: "",
-                    type: "address",
-                },
-            ],
-            name: "votes",
-            outputs: [
-                {
-                    name: "",
-                    type: "uint256",
-                },
-            ],
-            payable: false,
-            stateMutability: "view",
-            type: "function",
-        },
-        ];
-        function contractConnect() {
-            window.contract = new web3.eth.Contract(contractABI, contractAddress);
-        }
+  <!-- CONTRACT ABI AND ADDRESS FOR CONTRACT INTAIALIZATION => contractConnect  -->
+  <script src="<?php echo base_url(); ?>assets/js/smartContract/constants.js">
+  </script>    
 
-        connect()
-        // console.log(contract);
-</script>
 
   <!-- Web3 setUp with ethereum --> 
 <script type="text/javascript">
@@ -798,7 +690,9 @@
                 window.localStorage.setItem("userAddress", accounts[0]);
                 window.userAddress = window.localStorage.getItem("userAddress");
                 console.log(accounts);
+
                 contractConnect();
+                showAddress()
                 } 
             catch (error) {
             console.log(error);
@@ -808,6 +702,12 @@
             alert("Please connect to your Metamask wallet")
         }
     }
+ // Showing wallet address in p tag
+ function showAddress() {
+    console.log("showAddress funtion");
+     if(window.userAddress!=null)
+     document.getElementById("userWalletAddress").innerText = `You're Logged into:${window.userAddress}`
+ } 
 </script>
 
 <script type="text/javascript">
