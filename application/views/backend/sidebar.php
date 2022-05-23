@@ -1,4 +1,40 @@
-        <aside class="left-sidebar">
+<style>
+	.left-sidebar {
+		background-color: #4285F4;
+	}
+	.profile-text h5, .profile-text a{
+		color: #fff !important;
+		font-weight: 700;
+		font-size: 20px;
+	}
+	.profile-text {
+		margin-bottom: 2rem;
+	}
+	.active .active {
+		background-color: #85bfff !important;
+		/* color: #111 !important; */
+	}
+	.sidebar-nav {
+		background-color: #4285F4;
+		color: #fff !important;
+		font-weight: 400;
+		font-family: Roboto;
+	}
+	#sidebarnav li a {
+		background-color: #4285F4;
+	}
+	#sidebarnav li a:hover {
+		background-color: #85bfff !important;
+	}
+	.sidebar-nav * {
+		color: #fff !important;
+	}
+	.sidebar-nav li:hover {
+		background-color: #85bfff !important;
+	}
+
+</style> 
+ <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- User profile -->

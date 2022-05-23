@@ -1,3 +1,25 @@
+<style>
+	* {
+		font-family: 'Roboto', sans-serif;
+	}
+	.font-size-12 {
+		font-size: 12px !important;
+	}
+	.breadcrumb {
+		font-family: 'Roboto', sans-serif !important;
+		font-weight: 400;
+	}
+	.nav-link:hover {
+		color: #4285F4 !important;
+	}
+	.nav-link.active {
+		font-weight: 400;
+		background-color: #4285F4 !important;
+		color: #fff !important;
+		border: none !important;
+		border-radius: 10px 10px 0 0 !important;
+	}
+</style>
 <?php $this->load->view('backend/header'); ?>
 <?php $this->load->view('backend/sidebar'); ?>
                      <div class="page-wrapper">

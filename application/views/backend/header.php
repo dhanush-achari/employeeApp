@@ -58,15 +58,6 @@ date_default_timezone_set('Asia/Dhaka');
     <div id="main-wrapper">
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="<?php echo base_url(); ?>"><b>
-                        <img src="<?php echo base_url();?>assets/images/hricn.png" alt="DRI" class="DRI-logo" style="width:50px;"/>
-                        </b>
-                        <!-- Logo text --><span>
-                         <img src="<?php echo base_url(); ?>assets/images/<?php echo $settingsvalue->sitelogo; ?>" alt="homepage" class="dark-logo" height="60px" width="100px" />
-                         <!-- Light Logo text -->    
-                         </span> </a>
-                </div>
                 <div class="navbar-collapse">
                     <ul class="navbar-nav mr-auto mt-md-0">
                         <!-- This is  -->

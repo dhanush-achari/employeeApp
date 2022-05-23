@@ -1,3 +1,28 @@
+<style>
+	* {
+		font-family: 'Roboto', sans-serif;
+	}
+
+	.card-body .round {
+		position: relative;
+	}
+
+	.card-body .round i {
+		position: absolute;
+		right: 5;
+		top: 15px;
+		left: 5;
+		bottom: 5;
+	}
+
+	.font-size-12 {
+		font-size: 12px !important;
+	}
+	.breadcrumb {
+		font-family: 'Roboto', sans-serif !important;
+		font-weight: 400;
+	}
+</style>
 <?php $this->load->view('backend/header'); ?>
 <?php $this->load->view('backend/sidebar'); ?>
       <div class="page-wrapper">
@@ -15,7 +40,8 @@
             </div>
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
+            <div class="p-3">
+						<div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Row -->
                 <div class="row">
@@ -37,29 +63,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <!-- <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex flex-row">
-                                    <div class="round align-self-center round-info"><i class="ti-file"></i></div>
-                                    <div class="m-l-10 align-self-center">
-                                        <h3 class="m-b-0">
-                                             <?php 
-                                                    $this->db->where('leave_status','Approve');
-                                                    $this->db->from("emp_leave");
-                                                    echo $this->db->count_all_results();
-                                                ?> Leaves
-                                        </h3>
-                                        <a href="<?php echo base_url(); ?>leave/Application" class="text-muted m-b-0">View Details</a>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Column -->
-                    <!-- Column -->
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
@@ -79,35 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <!-- <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex flex-row">
-                                    <div class="round align-self-center round-success"><i class="ti-money"></i></div>
-                                    <div class="m-l-10 align-self-center">
-                                        <h3 class="m-b-0">
-                                         <?php 
-                                                $this->db->where('status','Granted');
-                                                $this->db->from("loan");
-                                                echo $this->db->count_all_results();
-                                            ?> Loan 
-                                        </h3>
-                                        <a href="<?php echo base_url(); ?>Loan/View" class="text-muted m-b-0">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Column -->
-                </div>
-                <!-- Row -->
-                <!-- Row -->
-                
-                <div class="row ">
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-3 col-xlg-3">
+										<div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-info">
                             <div class="box bg-primary text-center">
                                 <h1 class="font-light text-white">
@@ -121,23 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- <div class="col-md-6 col-lg-3 col-xlg-3">
-                        <div class="card card-info card-inverse">
-                            <div class="box text-center">
-                                <h1 class="font-light text-white">
-                                             <?php 
-                                                    $this->db->where('leave_status','Not Approve');
-                                                    $this->db->from("emp_leave");
-                                                    echo $this->db->count_all_results();
-                                                ?> 
-                                </h1>
-                                <h6 class="text-white">Pending Leave Application</h6>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-3 col-xlg-3">
+										<div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-danger">
                             <div class="box text-center">
                                 <h1 class="font-light text-white">
@@ -151,24 +110,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- <div class="col-md-6 col-lg-3 col-xlg-3">
-                        <div class="card card-inverse card-success">
-                            <div class="box text-center">
-                                <h1 class="font-light text-white">
-                                         <?php 
-                                                $this->db->where('status','Granted');
-                                                $this->db->from("loan");
-                                                echo $this->db->count_all_results();
-                                            ?> 
-                                </h1>
-                                <h6 class="text-white">Loan Application</h6>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- Column -->
                 </div>
-                <!-- ============================================================== -->
             </div> 
             <div class="container-fluid">
                 <?php $notice = $this->notice_model->GetNoticelimit(); 
@@ -186,7 +128,7 @@
                                 <h4 class="card-title">Running Project/s</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive" style="height:600px;overflow-y:scroll">
+                                <div class="table-responsive" style="height:300px;overflow-y:scroll">
                                     <table class="table table-bordered table-hover earning-box">
                                         <thead>
                                             <tr>
@@ -215,7 +157,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">To Do list</h4>
                                 <h6 class="card-subtitle">List of your next task to complete</h6>
-                                <div class="to-do-widget m-t-20" style="height:550px;overflow-y:scroll">
+                                <div class="to-do-widget m-t-20" style="height:255px;overflow-y:scroll">
                                             <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
                                                <?php foreach($todolist as $value): ?>
                                                 <li class="list-group-item" data-role="task">
@@ -258,7 +200,7 @@
                                 <h4 class="card-title">Notice Board</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive slimScrollDiv" style="height:600px;overflow-y:scroll">
+                                <div class="table-responsive slimScrollDiv" style="height:300px;overflow-y:scroll">
                                     <table class="table table-hover table-bordered earning-box ">
                                         <thead>
                                             <tr>
@@ -290,7 +232,7 @@
                                 </h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive" style="height:600px;overflow-y:scroll">
+                                <div class="table-responsive" style="height:300px;overflow-y:scroll">
                                     <table class="table table-hover table-bordered earning-box">
                                        <thead>
                                             <tr>
@@ -312,6 +254,8 @@
                         </div>
                     </div>
                 </div> 
+						</div>
+						</div>
 <script>
   $(".to-do").on("click", function(){
       //console.log($(this).attr('data-value'));
