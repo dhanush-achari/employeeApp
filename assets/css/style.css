@@ -26,13 +26,14 @@
 }
 
 * {
-    outline: none
+    outline: none;
+		font-family: "Roboto", sans-serif !important;
 }
 
 body {
     background: #fff;
-   /*   font-family: "Poppins", sans-serif;*/
-    font-family: 'Open Sans', sans-serif
+   /*   font-family: "Roboto", sans-serif;*/
+    font-family: 'Roboto', sans-serif !important;
     margin: 0;
     overflow-x: hidden;
     color: #67757c;
@@ -81,7 +82,7 @@ h4,
 h5,
 h6 {
     color: #455a64;
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400
 }
 
@@ -751,7 +752,7 @@ html body .bg-white {
 .pagination-split li {
     margin-left: 5px;
     display: inline-block;
-    float: left
+    float: left;
 }
 
 .pagination-split li:first-child {
@@ -2877,7 +2878,7 @@ body .jqstooltip {
 
 .c3-chart-arcs-title,
 .c3-legend-item {
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     fill: #67757c
 }
 
@@ -3041,7 +3042,7 @@ html body #visitor .c3-chart-arcs-title {
 }
 
 .ecomm-donute svg text {
-    font-family: "Poppins", sans-serif!important;
+    font-family: "Roboto", sans-serif!important;
     font-size: 12px!important;
     font-weight: 500!important
 }
@@ -3202,7 +3203,7 @@ html body #visitor .c3-chart-arcs-title {
 .profile-tab li a.nav-link.active {
     border-bottom: 2px solid #1976d2;
     color: #1976d2;
-    /* font-family: 'Open Sans', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
 }
 
 .customtab li a.nav-link:hover,
@@ -3320,7 +3321,7 @@ html body #visitor .c3-chart-arcs-title {
     padding: 10px 10px 10px 0;
     display: block;
     border: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     border-radius: 0px;
     border-bottom: 1px solid rgba(120, 130, 140, 0.13)
 }
@@ -4002,7 +4003,8 @@ table th {
     border-radius: 4px;
     background: #1976d2;
     color: #ffffff;
-    margin-right: 3px
+    margin-right: 3px;
+		font-weight: 500 !important;
 }
 
 .dt-buttons .dt-button:hover {
@@ -4982,7 +4984,7 @@ table.dataTable thead .sorting:after {
     border: 1px solid rgba(120, 130, 140, 0.13);
     padding: 8px 16px;
     height: auto;
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     border-radius: 0
 }
@@ -6055,48 +6057,13 @@ a.mytooltip {
 .search-listing li a {
     color: #26dad2
 }
-
-.login-register {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100%;
-    width: 100%;
-    padding: 5% 0;
-    position: fixed
+.loginpage {
+	margin-top: 50% !important;
 }
-
 .login-box {
-    width: 400px;
-    margin: 0 auto
+	height: 100vh !important;
+	margin-top: 50% !important;
 }
-
-.login-box .footer {
-    width: 100%;
-    left: 0px;
-    right: 0px
-}
-
-.login-box .social {
-    display: block;
-    margin-bottom: 30px
-}
-
-#recoverform {
-    display: none
-}
-
-.login-sidebar {
-    padding: 0px;
-    margin-top: 0px
-}
-
-.login-sidebar .login-box {
-    right: 0px;
-    position: absolute;
-    height: 100%
-}
-
 .minimal-faq .card {
     border: 0px
 }
