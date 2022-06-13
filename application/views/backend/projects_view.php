@@ -530,11 +530,15 @@
                                                         <button type="button" class="btn btn-info">Cancel</button>
                                                     </div>
                                                 </form>
+                                                <br>
+                                                <hr>
                                                 <h3>Login to Check your Credits Points</h3>
                                                 <button type="submit" class="btn btn-success" id="walletLogin" onclick="walletLogin()">Wallet Login</button>
                                                 <p id="userWalletAddress"></p>
 
-                                                <button type="button" class="btn btn-warning" onclick="sendCreditPoints()">Check Credit Points</button>
+                                                <button type="button" class="btn btn-warning" onclick="getCreditPoints()">Check Credit Points</button>
+                                                <h4 id="creditScore"></h4>
+
                                             <?php } else { ?>
                                                 <h3>Login to Distribute Credits Points</h3>
                                                 <button type="submit" class="btn btn-success" id="walletLogin" onclick="walletLogin()">Wallet Login</button>
@@ -741,6 +745,14 @@
         } else {
             alert("Please log in to Wallet first!!")
         }
+    }
+
+    function getCreditPoints(){
+        console.log("Checking your points...");
+        contract.methods.creditPoints(userAddress).call().then(function(res){
+            console.log(`Your credit points ${res}`)
+            document.getElementById("creditScore").innerText = `Your credit points : ${res}`
+        })
     }
 </script>
 
