@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 @import url(../scss/icons/font-awesome/css/font-awesome.min.css);
 @import url(../scss/icons/simple-line-icons/css/simple-line-icons.css);
@@ -31,8 +31,7 @@
 
 body {
     background: #fff;
-   /*   font-family: "Poppins", sans-serif;*/
-    font-family: 'Open Sans', sans-serif
+    font-family: 'Roboto', sans-serif !important;
     margin: 0;
     overflow-x: hidden;
     color: #67757c;
@@ -81,7 +80,7 @@ h4,
 h5,
 h6 {
     color: #455a64;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     font-weight: 400
 }
 
@@ -10128,22 +10127,10 @@ button.btn.btn-info.btn-lg.btn-logino {
 }
 
 .card-outline-info .card-header {
-   background-color: inherit!important;
+   background-color: #007bff !important;
     border-color: #1976d2;
     position: relative;
-}
-.card-outline-info .card-header > h4{
-color: #67757c!important
-}
-.card-header:before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-top: 12px solid #3976d2;
-    border-right: 12px solid transparent;
-    position: absolute;
-    left: 0;
-    top: 0;
+		color: #fff !important;
 }
 .modal-content{
     border-radius: 0px;
