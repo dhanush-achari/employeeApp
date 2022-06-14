@@ -1,9 +1,3 @@
-<style>
-	.border-radius {
-		border-radius: 5px !important;
-	}
-</style>
-
 <?php $this->load->view('backend/header'); ?>
 <?php $this->load->view('backend/sidebar'); ?>
 <div class="page-wrapper">
@@ -103,7 +97,7 @@
 								<thead>
 									<tr>
 										<th>Department Name</th>
-										<th>Action</th>
+										<th class="text-align-center">Action</th>
 									</tr>
 								</thead>
 								<!-- <tfoot>
@@ -117,9 +111,9 @@
 									<?php foreach ($department as $value) { ?>
 										<tr>
 											<td><?php echo $value->dep_name; ?></td>
-											<td class="jsgrid-align-center ">
-												<a href="<?php echo base_url(); ?>organization/dep_edit/<?php echo $value->id; ?>" title="Edit" class="btn btn-sm btn-primary waves-effect waves-light"><i class="fa fa-pencil-square-o"></i></a>
-												<a onclick="return confirm('Are you sure to delete this data?')" href="<?php echo base_url(); ?>organization/Delete_dep/<?php echo $value->id; ?>" title="Delete" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash-o"></i></a>
+											<td class="jsgrid-align-center d-flex">
+												<a href="<?php echo base_url(); ?>organization/dep_edit/<?php echo $value->id; ?>" title="Edit" class="btn-circle btn-info d-flex justify-content-center mr-3 align-items-center waves-effect waves-light"><i class="fa fa-pencil"></i></a>
+												<a onclick="return confirm('Are you sure to delete this data?')" href="<?php echo base_url(); ?>organization/Delete_dep/<?php echo $value->id; ?>" title="Delete" class="btn-circle btn-danger d-flex justify-content-center align-items-center waves-effect waves-light"><i class="fa fa-trash-o"></i></a>
 											</td>
 										</tr>
 									<?php } ?>

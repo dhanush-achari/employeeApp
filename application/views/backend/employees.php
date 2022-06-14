@@ -1,12 +1,18 @@
+<style>
+	.employee-list .dt-button {
+		border-radius: 20px !important;
+		margin-right: 10px !important;
+	}
+</style>
 <?php $this->load->view('backend/header'); ?>
 <?php $this->load->view('backend/sidebar'); ?>
-<div class="page-wrapper">
+<div class="page-wrapper employee-list">
 	<!-- ============================================================== -->
 	<!-- Bread crumb and right sidebar toggle -->
 	<!-- ============================================================== -->
 	<div class="row page-titles">
 		<div class="col-md-5 align-self-center">
-			<h3 class="text-themecolor"><i class="fa fa-users" aria-hidden="true"></i> Employee</h3>
+			<h3 class="text-primary"><i class="fa fa-users" style="color:#0d6efd" aria-hidden="true"></i> Employee</h3>
 		</div>
 		<div class="col-md-7 align-self-center">
 			<ol class="breadcrumb">
@@ -16,11 +22,10 @@
 		</div>
 	</div>
 	<div class="message"></div>
-	<div class="container-fluid p-4">
+	<div class="container-fluid p-2 px-4">
 		<div class="row m-b-10">
-			<div class="col-12 pb-4">
-				<button type="button" class="btn mr-4 btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>employee/Add_employee" class="text-white"><i class="" aria-hidden="true"></i> Add Employee</a></button>
-				<button type="button" class="btn btn-primary"><i class="fa fa-bars"></i><a href="<?php echo base_url(); ?>employee/Disciplinary" class="text-white"><i class="" aria-hidden="true"></i> Disciplinary List</a></button>
+			<div class="col-12 pb-2">
+				<button type="button" class="btn-rounded mr-2 btn-info"><i class="fa fa-plus"></i><a href="<?php echo base_url(); ?>employee/Add_employee" class="text-white"><i class="" aria-hidden="true"></i> Add Employee</a></button>
 			</div>
 		</div>
 		<div class="row">
@@ -42,16 +47,6 @@
 										<th>Action</th>
 									</tr>
 								</thead>
-								<!-- <tfoot>
-                                               <tr>
-                                                <th>Employee Name</th>
-                                                <th>PIN</th>
-                                                <th>Email </th>
-                                                <th>Contact </th>
-                                                <th>User Type</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </tfoot> -->
 								<tbody>
 									<?php foreach ($employee as $value) : ?>
 										<tr>
@@ -60,8 +55,8 @@
 											<td><?php echo $value->em_email; ?></td>
 											<td><?php echo $value->em_phone; ?></td>
 											<td><?php echo $value->em_role; ?></td>
-											<td class="jsgrid-align-center ">
-												<a href="<?php echo base_url(); ?>employee/view?I=<?php echo base64_encode($value->em_id); ?>" title="Edit" class="btn btn-sm btn-primary waves-effect waves-light"><i class="fa fa-pencil-square-o"></i></a>
+											<td class="jsgrid-align-center d-flex justify-content-center">
+												<a href="<?php echo base_url(); ?>employee/view?I=<?php echo base64_encode($value->em_id); ?>" title="Edit" class="btn-circle btn-info d-flex justify-content-center align-items-center waves-effect waves-light"><i class="fa fa-pencil"></i></a>
 											</td>
 										</tr>
 									<?php endforeach; ?>

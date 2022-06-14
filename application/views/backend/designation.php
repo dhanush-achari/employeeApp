@@ -1,7 +1,5 @@
 <style>
-	.border-radius {
-		border-radius: 5px !important;
-	}
+	
 </style>
 <?php $this->load->view('backend/header'); ?>
 <?php $this->load->view('backend/sidebar'); ?>
@@ -48,8 +46,8 @@
 									<!--/row-->
 								</div>
 								<div class="form-actions">
-									<button type="submit" class="btn-rounded btn-info border-radius mr-2"> <i class="fa fa-check"></i> Save</button>
-									<button type="button" class="btn-rounded btn-secondary border-radius">Cancel</button>
+									<button type="submit" class="btn-rounded btn-info mr-2"> <i class="fa fa-check"></i> Save</button>
+									<button type="button" class="btn-rounded btn-secondary">Cancel</button>
 								</div>
 							</form>
 						</div>
@@ -76,13 +74,11 @@
 												<input type="text" name="designation" id="firstName" value="" class="form-control" placeholder="" minlength="3" required>
 											</div>
 										</div>
-										<!--/span-->
 									</div>
-									<!--/row-->
 								</div>
 								<div class="form-actions">
-									<button type="submit" class="btn-rounded btn-info border-radius mr-2"> <i class="fa fa-check"></i> Save</button>
-									<button type="button" class="btn-rounded btn-secondary border-radius">Cancel</button>
+									<button type="submit" class="btn-rounded btn-info mr-2"> <i class="fa fa-check"></i> Save</button>
+									<button type="button" class="btn-rounded btn-secondary">Cancel</button>
 								</div>
 							</form>
 						</div>
@@ -115,9 +111,9 @@
 									<?php foreach ($designation as $value) { ?>
 										<tr>
 											<td><?php echo $value->des_name; ?></td>
-											<td class="jsgrid-align-center ">
-												<a href="<?php echo base_url(); ?>organization/Edit_des/<?php echo $value->id ?>" title="Edit" class="btn btn-sm btn-primary waves-effect waves-light"><i class="fa fa-pencil-square-o"></i></a>
-												<a onclick="return confirm('Are you sure to delete this data?')" href="<?php echo base_url(); ?>organization/des_delete/<?php echo $value->id; ?>" title="Delete" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash-o"></i></a>
+											<td class="jsgrid-align-center d-flex">
+												<a href="<?php echo base_url(); ?>organization/Edit_des/<?php echo $value->id ?>" title="Edit" class="btn-circle btn-info d-flex justify-content-center mr-3 align-items-center waves-effect waves-light"><i class="fa fa-pencil"></i></a>
+												<a onclick="return confirm('Are you sure to delete this data?')" href="<?php echo base_url(); ?>organization/des_delete/<?php echo $value->id; ?>" title="Delete" class="btn-circle btn-danger d-flex justify-content-center align-items-center waves-effect waves-light"><i class="fa fa-trash-o"></i></a>
 											</td>
 										</tr>
 									<?php } ?>
