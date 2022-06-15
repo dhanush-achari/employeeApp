@@ -29,8 +29,8 @@
                                     <div class="modal-footer">
                                         <input type="hidden" name="emid" value=""> 
                                         <input type="hidden" name="id" value=""> 
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="button" class="btn-rounded btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn-rounded btn-info">Submit</button>
                                     </div>
                                     </form>
                                 </div>
@@ -67,8 +67,8 @@
                                     <div class="modal-footer">
                                         <input type="hidden" name="emid" value=""> 
                                         <input type="hidden" name="id" value=""> 
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="button" class="btn-rounded btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn-rounded btn-info">Submit</button>
                                     </div>
                                     </form>
                                 </div>

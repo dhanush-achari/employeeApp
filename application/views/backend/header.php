@@ -77,7 +77,7 @@ date_default_timezone_set('Asia/Dhaka');
                                             <!-- Message -->
                                             <?php foreach($leavetoday as $value): ?>
                                             <a href="#">
-                                                <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                                <div class="btn-rounded btn-secondary btn-circle"><i class="fa fa-link"></i></div>
                                                 <div class="mail-contnet">
                                                     <h5><?php echo $value->first_name; ?></h5> <span class="mail-desc"><?php echo $value->reason; ?></span> <span class="time"><?php echo $value->start_date; ?></span> </div>
                                             </a>

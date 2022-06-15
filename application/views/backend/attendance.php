@@ -95,8 +95,8 @@
                                                                                         
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-success waves-effect">Save</button>
-                                                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn-rounded btn-info waves-effect">Save</button>
+                                                <button type="button" class="btn-rounded btn-secondary waves-effect" data-dismiss="modal">Close</button>
                                             </div>
                                             </form>
                                         </div>

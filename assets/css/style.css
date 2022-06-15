@@ -10133,24 +10133,26 @@ button.btn.btn-info.btn-lg.btn-logino {
 		color: #fff !important;
 }
 .modal-content{
-    border-radius: 0px;
+    border-radius: 5px;
     border-bottom: 1px solid #3976d2;
 }
 .modal-header{
     position: relative;
     border-bottom: 1px solid #3976d2;
+		background-color: #007bff;
+		border-radius: 5px 5px 0 0;
+		color: #fff !important;
 }
-.modal-header:before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-top: 12px solid #3976d2;
-    border-right: 12px solid transparent;
-    position: absolute;
-    left: 0;
-    top: 0
+.modal-title {
+	color: #fff !important;
 }
-
+.modal-header .close {
+	color: #fff !important;
+}
+.dt-button {
+	border-radius: 20px !important;
+	margin-right: 10px !important;
+}
 /*ADDitional Invoice CSS*/
 
 

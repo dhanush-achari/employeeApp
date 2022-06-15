@@ -59,8 +59,8 @@ https://www.patchesoft.com/fullcalendar-with-php-and-codeigniter/
                             <div class="modal-body"></div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-white waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                                <button type="button" class="btn-rounded btn-info save-event waves-effect waves-light">Create event</button>
+                                <button type="button" class="btn-rounded btn-secondary delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -160,8 +160,8 @@ https://www.patchesoft.com/fullcalendar-with-php-and-codeigniter/
                                     </div>
                                     <div class="modal-footer">
                                     <input type="hidden" name="id" value="" class="form-control" id="recipient-name1">                                       
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="button" class="btn-rounded btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn-rounded btn-info">Submit</button>
                                     </div>
                                     </form>
                                 </div>

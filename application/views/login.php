@@ -78,7 +78,7 @@
                  </div>                     
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
-                            <button class="btn btn-success btn-login btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
+                            <button class="btn-rounded btn-info btn-login btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
                         </div>
                     </div>
                 </form>

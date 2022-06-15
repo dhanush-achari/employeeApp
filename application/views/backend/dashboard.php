@@ -185,7 +185,7 @@
 										<input type="text" name="todo_data" class="form-control" style="border: 1px solid #fff !IMPORTANT;" placeholder="Enter New Task...">
 										<span class="input-group-btn">
 											<input type="hidden" name="userid" value="<?php echo $this->session->userdata('user_login_id'); ?>">
-											<button type="submit" class="btn btn-success todo-submit"><i class="fa fa-plus"></i></button>
+											<button type="submit" class="btn btn-info todo-submit">Add</button>
 										</span>
 									</div>
 								</form>

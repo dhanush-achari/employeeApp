@@ -1,3 +1,16 @@
+<style>
+	.nav-link:hover {
+		color: #4285F4 !important;
+	}
+
+	.nav-link.active {
+		font-weight: 400;
+		background-color: #4285F4 !important;
+		color: #fff !important;
+		border: none !important;
+		border-radius: 5px 5px 0 0 !important;
+	}
+</style>
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 

@@ -269,7 +269,7 @@
                          '<button class="dtp-btn-now btn btn-flat hidden">' + this.params.nowText + '</button>' +
                          '<button class="dtp-btn-clear btn btn-flat hidden">' + this.params.clearText + '</button>' +
                          '<button class="dtp-btn-cancel btn btn-inverse m-r-10">' + this.params.cancelText + '</button>' +
-                         '<button class="dtp-btn-ok btn btn-success">' + this.params.okText + '</button>' +
+                         '<button class="dtp-btn-ok btn-rounded btn-info">' + this.params.okText + '</button>' +
                          '<div class="clearfix"></div>' +
                          '</div>' +
                          '</div>' +
