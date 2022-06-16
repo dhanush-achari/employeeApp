@@ -61,7 +61,7 @@
 													<!--progress bar-->
 													<div class="container">
 
-														
+
 													</div>
 													<!--end progress-->
 													<h1 class="card-title fs-30 m-t-10"><?php echo $details->pro_name; ?></h1>
@@ -556,8 +556,8 @@
 										</div>
 									</div>
 								</div>
-							</tbody>
-							</table>
+								</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
@@ -647,12 +647,16 @@
 	}
 
 	function getCreditPoints() {
-		console.log("Checking your points...");
-		let userWalletAddress = document.getElementById('userWalletAddress').innerText.toString().trim().substring(20)
-		contract.methods.creditPoints(userWalletAddress).call().then(function(res) {
-			console.log(`Your Incentive Tokens ${res}`)
-			document.getElementById("creditScore").innerText = `Your Incentive Tokens : <b>${res}</b>`
-		})
+		if (window.userAddress != null) {
+			console.log("Checking your points...");
+			// let userWalletAddress = document.getElementById('userWalletAddress').innerText.toString().trim().substring(20)
+			contract.methods.creditPoints(userAddress).call().then(function(res) {
+				console.log(`Your Incentive Tokens ${res}`)
+				document.getElementById("creditScore").innerHTML = `Your Incentive Tokens : <b>${res}</b>`
+			})
+		} else {
+			alert('Please Login to wallet first!.')
+		}
 	}
 </script>
 
