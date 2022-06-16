@@ -1,3 +1,8 @@
+<style>
+	.font-weight-700 {
+		font-weight: 600;
+	}
+</style>
 <?php $this->load->view('backend/header'); ?>
 <?php $this->load->view('backend/sidebar'); ?>
 <div class="page-wrapper">
@@ -31,13 +36,13 @@
 							<?php if ($this->session->userdata('user_type') == 'EMPLOYEE') { ?>
 								<li class="nav-item">
 									<a class="nav-link" data-toggle="tab" href="#expenses" role="tab">
-										Complete Task
+										Complete Task/Incentive Tokens
 									</a>
 								</li>
 							<?php } else { ?>
 								<li class="nav-item">
 									<a class="nav-link" data-toggle="tab" href="#expenses" role="tab">
-										Completed Task
+										Review Tasks/Award Tokens
 									</a>
 								</li>
 							<?php } ?>
@@ -125,7 +130,7 @@
 							</div>
 							<!--second tab-->
 							<div class="tab-pane" id="tasks" role="tabpanel">
-								<div class="card">
+								<div class="card">awarf
 									<div class="card-body">
 										<h3 class="card-title">Project tasks</h3>
 										<div class="table-responsive " id="">
@@ -488,7 +493,7 @@
 												</tbody>
 											</table>
 											<?php if ($this->session->userdata('user_type') == 'EMPLOYEE') { ?>
-												<form class="row" action="Add_Expenses" method="post" enctype="multipart/form-data" id="expenseform">
+												<form class="row container-fluid" action="Add_Expenses" method="post" enctype="multipart/form-data" id="expenseform">
 													<div class="form-group col-md-6 m-t-5">
 														<label>Details</label>
 														<input type="text" class="form-control form-control-line" placeholder="details..." name="details">
@@ -524,25 +529,26 @@
 												</form>
 												<br>
 												<hr>
-												<h3>Login to Check your Credits Points</h3>
+												<h3>Login to Check your Credit Tokens(ETH)</h3>
 												<button type="submit" class="btn-rounded btn-success" id="walletLogin" onclick="walletLogin()">Wallet Login</button>
-												<p id="userWalletAddress"></p>
+												<p id="userWalletAddress" class="py-2"></p>
 
-												<button type="button" class="btn-rounded btn-warning" onclick="getCreditPoints()">Check Credit Points</button>
-												<p id="creditScore"></p>
+												<button type="button" class="btn-rounded btn-warning" onclick="getCreditPoints()">Check Incentive tokens</button>
+												<p id="creditScore" class="py-2"></p>
 
 											<?php } else { ?>
-												<h3>Login to Distribute Credits Points</h3>
+												<hr>
+												<h3>Login to Distribute Credit Tokens(ETH)</h3>
 												<button type="submit" class="btn-rounded btn-info" id="walletLogin" onclick="walletLogin()">Wallet Login</button>
 
 												<p id="userWalletAddress"></p>
 
-												<label for="exampleInputEmail1">Employee Wallet Address</label>
+												<label for="exampleInputEmail1" class="font-weight-700 pt-3">Employee Wallet Address</label>
 												<input type="email" class="form-control" id="employeeWalletAddress" aria-describedby="emailHelp" placeholder="Enter Employee Wallet Address">
 												<small id="emailHelp" class="form-text text-muted">We'll never share your wallet address with anyone else.</small>
-												<label for="exampleInputEmail1">Credit points</label>
+												<label for="exampleInputEmail1" class="font-weight-700 pt-4">Credit Tokens(ETH)</label>
 												<input type="number" class="form-control" id="creditPoints" aria-describedby="emailHelp" placeholder="Enter Credit points">
-												<small id="emailHelp" class="form-text text-muted">How many credits would you like to award?</small>
+												<small id="emailHelp" class="form-text text-muted">How many Tokens(ETH) would you like to award?</small>
 												<button type="button" class="btn-rounded btn-warning" onclick="sendCreditPoints()">Award</button>
 
 											<?php } ?>
@@ -644,8 +650,8 @@
 		console.log("Checking your points...");
 		let userWalletAddress = document.getElementById('userWalletAddress').innerText.toString().trim().substring(20)
 		contract.methods.creditPoints(userWalletAddress).call().then(function(res) {
-			console.log(`Your credit points ${res}`)
-			document.getElementById("creditScore").innerText = `Your credit points : ${res}`
+			console.log(`Your Incentive Tokens ${res}`)
+			document.getElementById("creditScore").innerText = `Your Incentive Tokens : <b>${res}</b>`
 		})
 	}
 </script>
